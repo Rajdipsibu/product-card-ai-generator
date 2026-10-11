@@ -26,12 +26,14 @@ function App() {
     setProduct(null);
 
     try {
+      console.log("Product Name:", productName);
+      console.log("Category:", category);
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/products/generate`,
         {
           method: "POST",
           headers: {
-            "Contents-Type": "application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             productName: productName.trim(),
